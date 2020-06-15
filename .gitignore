@@ -9,3 +9,4 @@
 bintrayKey
 gradle.properties
 *.iml
+!/.idea/

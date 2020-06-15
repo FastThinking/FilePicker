@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FilePicker.iml" filepath="$PROJECT_DIR$/FilePicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/FilePicker-app.iml" filepath="$PROJECT_DIR$/app/FilePicker-app.iml" group="FilePicker/app" />
+      <module fileurl="file://$PROJECT_DIR$/filepicker/FilePicker-filepicker.iml" filepath="$PROJECT_DIR$/filepicker/FilePicker-filepicker.iml" group="FilePicker/filepicker" />
+      <module fileurl="file://$PROJECT_DIR$/android-FilePicker.iml" filepath="$PROJECT_DIR$/android-FilePicker.iml" group="FilePicker" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/filepicker/filepicker.iml" filepath="$PROJECT_DIR$/filepicker/filepicker.iml" />
     </modules>
