@@ -2,13 +2,18 @@ package com.ess.filepicker.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+
 import com.google.android.material.tabs.TabLayout;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,6 +79,11 @@ public class SelectFileByScanActivity extends AppCompatActivity implements ViewP
             @Override
             public void onClick(View v) {
                 onBackPressed();
+//                多选
+//                Intent result = new Intent();
+//                result.putParcelableArrayListExtra(Const.EXTRA_RESULT_SELECTION, mSelectedFileList);
+//                setResult(RESULT_OK, result);
+//                onBackPressed();
             }
         });
 
@@ -82,7 +92,7 @@ public class SelectFileByScanActivity extends AppCompatActivity implements ViewP
 
         List<Fragment> fragmentList = new ArrayList<>();
         for (int i = 0; i < SelectOptions.getInstance().getFileTypes().length; i++) {
-            fragmentList.add(FileTypeListFragment.newInstance(SelectOptions.getInstance().getFileTypes()[i],SelectOptions.getInstance().isSingle,SelectOptions.getInstance().maxCount,SelectOptions.getInstance().getSortType(),EssMimeTypeCollection.LOADER_ID+i));
+            fragmentList.add(FileTypeListFragment.newInstance(SelectOptions.getInstance().getFileTypes()[i], SelectOptions.getInstance().isSingle, SelectOptions.getInstance().maxCount, SelectOptions.getInstance().getSortType(), EssMimeTypeCollection.LOADER_ID + i));
         }
         FragmentPagerAdapter adapter = new FragmentPagerAdapter(getSupportFragmentManager(), fragmentList, Arrays.asList(SelectOptions.getInstance().getFileTypes()));
         mViewPager.setAdapter(adapter);
@@ -168,7 +178,7 @@ public class SelectFileByScanActivity extends AppCompatActivity implements ViewP
                                     SelectOptions.getInstance().setSortType(FileUtils.BY_SIZE_DESC);
                                     break;
                             }
-                            EventBus.getDefault().post(new FileScanSortChangedEvent(SelectOptions.getInstance().getSortType(),mViewPager.getCurrentItem()));
+                            EventBus.getDefault().post(new FileScanSortChangedEvent(SelectOptions.getInstance().getSortType(), mViewPager.getCurrentItem()));
                         }
                     })
                     .setPositiveButton("升序", new DialogInterface.OnClickListener() {
@@ -185,7 +195,7 @@ public class SelectFileByScanActivity extends AppCompatActivity implements ViewP
                                     SelectOptions.getInstance().setSortType(FileUtils.BY_SIZE_ASC);
                                     break;
                             }
-                            EventBus.getDefault().post(new FileScanSortChangedEvent(SelectOptions.getInstance().getSortType(),mViewPager.getCurrentItem()));
+                            EventBus.getDefault().post(new FileScanSortChangedEvent(SelectOptions.getInstance().getSortType(), mViewPager.getCurrentItem()));
                         }
                     })
                     .setTitle("请选择")

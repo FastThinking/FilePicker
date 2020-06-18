@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 .from(this)
                 .chooseForMimeType()
                 .setMaxCount(10)
+//                .isSingle()
                 .setFileTypes("png", "doc","apk", "mp3", "gif", "txt", "mp4", "zip")
                 .requestCode(REQUEST_CODE_CHOOSE)
                 .start();
